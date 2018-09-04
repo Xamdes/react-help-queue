@@ -8,7 +8,8 @@
     "fresh": "npm install; webpack",
     "gen": "./bin/generate-component.sh",
     "commit": "./bin/commit.sh",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "webpack-dev-server": "webpack-dev-server"
   },
   "author": "",
   "license": "ISC",
