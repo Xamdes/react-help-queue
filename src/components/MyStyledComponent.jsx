@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+// import {Card} from 'reactstrap';
 
 function MyStyledComponent(){
   var myStyledComponentStyles = {
@@ -8,12 +9,13 @@ function MyStyledComponent(){
     paddingTop: '50px'
   }
   return (
-  <div style={myStyledComponentStyles}>
-    <h1>Hey, I'm a component</h1>
+  <div className="card" style={myStyledComponentStyles}>
+    <h1 className="card-title">Hey, I'm a component</h1>
     <h2>But there's something different about me...</h2>
     <h3>Unlike other components you have worked with thus far....</h3>
     <h4>I also include custom CSS styles!</h4>
     <p>Pretty cool, right</p>
+    <button className="btn btn-danger">Test</button>
   </div>
   );
 }

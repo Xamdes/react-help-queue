@@ -37,13 +37,17 @@ module.exports = {
         exclude: /node_modules/,
         options: {
           presets: [
-            ["es2015", {"modules": false}],
-            "react",
+            '@babel/preset-react',
+            "@babel/preset-env"
           ],
           plugins: [
             "react-hot-loader/babel"
           ]
         }
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       }
     ],
   },
