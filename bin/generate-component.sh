@@ -3,6 +3,7 @@
 cd ./src/components
 
 echo "import React from \"react\";
+import PropTypes from \"prop-types\";
 
 function $1(){
   return (
@@ -11,6 +12,10 @@ function $1(){
   </div>
   );
 }
+
+$1.propTypes = {
+  // example: PropTypes.string,
+};
 
 export default $1;
 " > "$1.jsx"

@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "npm": "npm",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "fresh": "npm install; webpack",
     "gen": "./bin/generate-component.sh",
-    "commit": "./bin/commit.sh"
+    "commit": "./bin/commit.sh",
+    "webpack": "webpack"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
