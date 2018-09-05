@@ -31,6 +31,24 @@ module.exports = {
     publicPath: '/'
   },
 
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      Popper: 'popper.js',
+      React: 'react',
+      ReactDOM: 'react-dom'
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new HtmlWebpackPlugin({
+      template:'template.ejs',
+      appMountId: 'react-app-root',
+      title: 'React Help Queue',
+      filename: resolve(__dirname, 'build', 'index.html'),
+    }),
+  ],
+
   module: {
     rules: [
       {
@@ -53,7 +71,8 @@ module.exports = {
             '@babel/preset-env'
           ],
           plugins: [
-            'react-hot-loader/babel'
+            'react-hot-loader/babel',
+            'styled-jsx/babel'
           ]
         }
       },
@@ -62,17 +81,5 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       }
     ],
-  },
-
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
-    new HtmlWebpackPlugin({
-      template:'template.ejs',
-      appMountId: 'react-app-root',
-      title: 'React Help Queue',
-      filename: resolve(__dirname, 'build', 'index.html'),
-    }),
-  ]
-
+  }
 };

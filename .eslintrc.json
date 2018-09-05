@@ -1,4 +1,11 @@
 {
+  "globals": {
+    "ReactDOM": true,
+    "$": true,
+    "jQuery": true,
+    "Popper": true,
+    "React": true
+  },
   "env": {
     "browser": true,
     "es6": true,
@@ -17,6 +24,7 @@
     "react"
   ],
   "rules": {
+    "react/jsx-key": 2,
     "react/jsx-uses-vars": 2,
     "react/jsx-uses-react": 2,
     "react/jsx-no-duplicate-props": 2,
@@ -47,6 +55,7 @@
     "semi": [
       "error",
       "always"
-    ]
+    ],
+    "no-unused-vars": 1
   }
 }
