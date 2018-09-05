@@ -19,10 +19,12 @@ exampleClassTypeProp: PropTypes.instanceOf(ExampleClassName),
 
 **Styled Examples**
 
+```
 <Main className="card">  
   <ButtonTest className="btn"Test</ButtonTest  
 </Main>  
-
+```
+```
 const ButtonTest = styled.button`  
   background-color: red;  
   &:hover ${ButtonTest}  
@@ -30,10 +32,12 @@ const ButtonTest = styled.button`
     background-color: teal;  
   }  
 `;  
-
+```
+```
 const Main = styled.div`  
   backgroundColor: #ecf0f1;  
   fontFamily: sans-serif;  
   paddingTop: 50px;  
   `  
 ;  
+```
