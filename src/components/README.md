@@ -2,8 +2,14 @@
 * import PropTypes from 'prop-types';
 * import styled from 'styled-components';
 
+**Prop Type Examples**  
 
-**Prop Types Examples**  
+```
+[component-name].propTypes = {
+ [variable-name]: PropTypes.string,
+};
+```
+
 exampleArray: PropTypes.array,  
 exampleBoolean: PropTypes.bool,  
 exampleFunction: PropTypes.func,  
@@ -15,7 +21,7 @@ exampleReactElement: PropTypes.element,
 exampleArrayOfNumbers: PropTypes.arrayOf(PropTypes.number),  
 exampleArrayOfStrings: PropTypes.arrayOf(PropTypes.string),  
 exampleClassTypeProp: PropTypes.instanceOf(ExampleClassName),  
- optionalEnum: PropTypes.oneOf(['ExampleClass', 'AnotherExampleClass']),  
+optionalEnum: PropTypes.oneOf(['ExampleClass', 'AnotherExampleClass']),  
 
 **Styled Examples**
 

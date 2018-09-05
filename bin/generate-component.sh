@@ -2,36 +2,23 @@
 
 cd ./src/components
 
-echo "import React from \"react\";
-import PropTypes from \"prop-types\";
-
+echo "import styled from 'styled-components';
 function $1(){
   return (
-  <div>
-  Insert Code Here
-  </div>
+  <Main>
+  <h1>$1 Component Created Successfully</h1>
+  </Main>
   );
 }
 
-$1.propTypes = {
-  // example: PropTypes.string,
-};
-
 export default $1;
 
-/*
-propTypes Examples
-exampleArray: PropTypes.array,
-exampleBoolean: PropTypes.bool,
-exampleFunction: PropTypes.func,
-exampleNumber: PropTypes.number,
-exampleObject: PropTypes.object,
-exampleString: PropTypes.string,
-exampleSymbol: PropTypes.symbol,
-exampleReactElement: PropTypes.element,
-exampleArrayOfNumbers: PropTypes.arrayOf(PropTypes.number),
-exampleArrayOfStrings: PropTypes.arrayOf(PropTypes.string),
-exampleClassTypeProp: PropTypes.instanceOf(ExampleClassName),
-optionalEnum: PropTypes.oneOf(['ExampleClass', 'AnotherExampleClass']),
-*/
+const Main = styled.div\`
+  background-color: black;
+  fontFamily: sans-serif;
+  paddingTop: 50px;
+  color: white;
+  \`
+;
+
 " > "$1.jsx"

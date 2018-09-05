@@ -11,7 +11,8 @@
     "git-config": "./bin/git-config.sh",
     "webpack": "webpack",
     "webpack-dev-server": "webpack-dev-server",
-    "start": "webpack-dev-server --open",
+    "start": "webpack-dev-server",
+    "start-web": "webpack-dev-server --open",
     "web": "open http://localhost:8080",
     "lint": "eslint 'src/**' 'src/**/**'; exit 0",
     "lint-fix": "eslint 'src/**' 'src/**/**' --fix; exit 0"

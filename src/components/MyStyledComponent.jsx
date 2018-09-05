@@ -15,13 +15,7 @@ function MyStyledComponent(){
   );
 }
 
-//MyStyledComponent.propTypes = {
-// example: PropTypes.string,
-//};
-
 export default MyStyledComponent;
-
-
 
 const ButtonTest = styled.button`
   background-color: red;
