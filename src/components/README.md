@@ -19,13 +19,13 @@ exampleClassTypeProp: PropTypes.instanceOf(ExampleClassName),
 
 **Styled Examples**
 
-<Main className="card"  
+<Main className="card">  
   <ButtonTest className="btn"Test</ButtonTest  
-</Main  
+</Main>  
 
 const ButtonTest = styled.button`  
   background-color: red;  
-  &:hover ${ButtonTest}
+  &:hover ${ButtonTest}  
   {  
     background-color: teal;  
   }  
