@@ -2,19 +2,22 @@ import styled from 'styled-components';
 function NewTicketForm(){
   return (
     <Main>
-      <form>
+      <form className="row">
         <input
+          className="col-md-3"
           type='text'
           id='names'
           placeholder='Pair Names'/>
         <input
+          className="col-md-3"
           type='text'
           id='location'
           placeholder='Location'/>
         <textarea
+          className="col-md-3"
           id='issue'
           placeholder='Describe your issue.'/>
-        <button type='submit'>Help!</button>
+        <button className="col-md-3" type='submit'>Help!</button>
       </form>
     </Main>
   );

@@ -2,7 +2,8 @@ import Header from './Header';
 import TicketList from './TicketList';
 import MyStyledComponent from './MyStyledComponent';
 import NewTicketForm from './NewticketForm';
-import { Link, Switch, Route } from 'react-router-dom';
+import NoRoute from './NoRoute';
+import { Switch, Route } from 'react-router-dom';
 
 function App(){
   return (
@@ -11,8 +12,9 @@ function App(){
       <Switch>
         <Route exact path='/' component={TicketList} />
         <Route path='/newticket' component={NewTicketForm} />
+        <Route path='/styles' component={MyStyledComponent} />
+        <Route component={NoRoute} />
       </Switch>
-      <MyStyledComponent/>
     </div>
   );
 }
