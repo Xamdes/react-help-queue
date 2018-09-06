@@ -1,8 +1,8 @@
 import Header from './Header';
 import TicketList from './TicketList';
 import MyStyledComponent from './MyStyledComponent';
-import NewticketForm from './NewticketForm';
-import { Switch, Route } from 'react-router-dom';
+import NewTicketForm from './NewticketForm';
+import { Link, Switch, Route } from 'react-router-dom';
 
 function App(){
   return (

@@ -25,8 +25,8 @@ const ButtonTest = styled.button`
 `;
 
 const Main = styled.div`
-  background-color: #ecf0f1;
-  font-family: sans-serif;
-  padding-top: 50px;
-  `
+background-color: #ecf0f1;
+font-family: sans-serif;
+padding-top: 50px;
+`
 ;
