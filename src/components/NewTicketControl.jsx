@@ -1,30 +1,24 @@
-#!/usr/bin/env bash
-
-cd ./src/components
-
-echo "/*
+/*
 * Copy to other files
-* import $1 from './$1';
-* <$1/>
+* import NewTicketControl from './NewTicketControl';
+* <NewTicketControl/>
 */
 import styled from 'styled-components';
 // import { Link, Switch, Route } from 'react-router-dom';
 
-function $1(){
+function NewTicketControl(){
   return (
     <Main>
-      <h1>$1 Component Created Successfully</h1>
+      <h1>NewTicketControl Component Created Successfully</h1>
     </Main>
   );
 }
 
-export default $1;
+export default NewTicketControl;
 
-const Main = styled.div\`
+const Main = styled.div`
 background-color: black;
 font-family: sans-serif;
 padding-top: 50px;
 color: white;
-\`;
-
-" > "$1.jsx"
+`;
