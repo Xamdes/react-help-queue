@@ -5,17 +5,17 @@
   "main": "index.js",
   "scripts": {
     "npm": "npm",
-    "fresh": "npm install; webpack",
+    "fresh": "npm install && webpack",
     "gen": "./bin/generate-component.sh",
-    "commit": "./bin/commit.sh",
-    "git-config": "./bin/git-config.sh",
+    "commit": "bash ./bin/commit.sh",
+    "git-config": "bash ./bin/git-config.sh",
     "webpack": "webpack",
     "webpack-dev-server": "webpack-dev-server",
     "start": "webpack-dev-server",
     "start-web": "webpack-dev-server --open",
     "web": "open http://localhost:8080",
-    "lint": "eslint 'src/**' 'src/**/**'; exit 0",
-    "lint-fix": "eslint 'src/**' 'src/**/**' --fix; exit 0"
+    "lint": "eslint \"src/**\" \"src/**/**\" && exit 0",
+    "lint-fix": "eslint \"src/**\" \"src/**/**\" --fix && exit 0"
   },
   "author": "Steven Colburn",
   "license": "MIT",

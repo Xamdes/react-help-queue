@@ -4,7 +4,8 @@
     "$": true,
     "jQuery": true,
     "Popper": true,
-    "React": true
+    "React": true,
+    "PropTypes": true
   },
   "env": {
     "browser": true,

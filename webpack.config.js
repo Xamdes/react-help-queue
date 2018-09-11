@@ -23,6 +23,8 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
 
+  //eval-source-map for development
+  //source-map for production
   devtool: 'eval-source-map',
 
   devServer: {
@@ -37,10 +39,11 @@ module.exports = {
       jQuery: 'jquery',
       Popper: 'popper.js',
       React: 'react',
-      ReactDOM: 'react-dom'
+      ReactDOM: 'react-dom',
+      PropTypes: 'prop-types'
     }),
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template:'template.ejs',
       appMountId: 'react-app-root',
