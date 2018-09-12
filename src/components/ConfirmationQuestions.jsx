@@ -4,13 +4,14 @@
 * <ConfirmationQuestions/>
 */
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 // import { Link, Switch, Route } from 'react-router-dom';
 
-function ConfirmationQuestions(){
+function ConfirmationQuestions(props){
   return (
     <Main>
       <p>Have you gone through all the steps on the Learn How to Program debugging lesson?</p>
-      <button className="btn btn-dark">Yes</button>
+      <button className="btn btn-dark" onClick={props.onHandleClickConfirmation}>Yes</button>
     </Main>
   );
 }
@@ -23,3 +24,8 @@ font-family: sans-serif;
 padding-top: 50px;
 color: white;
 `;
+
+ConfirmationQuestions.propTypes = {
+  // [variable-name]: PropTypes.string,
+  onHandleClickConfirmation: PropTypes.funct
+};

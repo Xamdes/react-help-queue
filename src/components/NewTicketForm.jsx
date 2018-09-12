@@ -4,27 +4,39 @@
 * <NewTicketForm/>
 */
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 // import { Link, Switch, Route } from 'react-router-dom';
 
-function NewTicketForm(){
+function NewTicketForm(props)
+{
+  let _names, _location, _issue;
+  _names = _location = _issue = null;
+  function handleNewTicketFormSubmission(event)
+  {
+    event.preventDefault();
+  }
+
   return (
     <Main>
-      <form className="row">
+      <form className="row" onSubmit={handleNewTicketFormSubmission}>
         <input
           className="col-md-3"
           type='text'
           id='names'
           placeholder='Pair Names'/>
+          ref={(input) => {_names = input;}}/>
         <input
           className="col-md-3"
           type='text'
           id='location'
           placeholder='Location'/>
+          ref={(input) => {_location = input;}}/>
         <textarea
           className="col-md-3"
           id='issue'
           placeholder='Describe your issue.'/>
-        <button className="col-md-3" type='submit'>Help!</button>
+          ref={(textarea) => {_issue = textarea;}}/>
+        <button className="col-md-3" type='submit' >Help!</button>
       </form>
     </Main>
   );
@@ -38,3 +50,8 @@ font-family: sans-serif;
 padding-top: 50px;
 color: white;
 `;
+
+NewTicketForm.propTypes = {
+  // [variable-name]: PropTypes.string,
+  onHandleClickConfirmation: PropTypes.funct
+};

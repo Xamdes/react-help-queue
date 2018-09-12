@@ -14,10 +14,10 @@ class NewTicketControl extends React.Component{
     this.state = {
       formVisibleOnPage: false
     };
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClickConfirmation = this.handleClickConfirmation.bind(this);
   }
 
-  handleClick() {
+  handleClickConfirmation() {
     this.setState({formVisibleOnPage: !this.state.formVisibleOnPage});
   }
 
@@ -25,11 +25,11 @@ class NewTicketControl extends React.Component{
     let currentVisibleContent = null;
     if(this.state.formVisibleOnPage)
     {
-      currentVisibleContent = <NewTicketForm/>;
+      currentVisibleContent = <NewTicketForm onHandleClickConfirmation={this.handleClickConfirmation}/>;
     }
     else
     {
-      currentVisibleContent =<ConfirmationQuestions/>
+      currentVisibleContent = <ConfirmationQuestions onHandleClickConfirmation={this.handleClickConfirmation}/>
     }
     return (
       <Main>
