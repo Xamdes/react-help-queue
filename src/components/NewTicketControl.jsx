@@ -29,7 +29,7 @@ class NewTicketControl extends React.Component{
     }
     else
     {
-      currentVisibleContent = <ConfirmationQuestions onHandleClickConfirmation={this.handleClickConfirmation}/>
+      currentVisibleContent = <ConfirmationQuestions onHandleClickConfirmation={this.handleClickConfirmation}/>;
     }
     return (
       <Main>

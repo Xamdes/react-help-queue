@@ -14,27 +14,31 @@ function NewTicketForm(props)
   function handleNewTicketFormSubmission(event)
   {
     event.preventDefault();
+    _names.value = '';
+    _location.value = '';
+    _issue.value = '';
+    props.onHandleClickConfirmation();
   }
 
   return (
-    <Main>
+    <Main className="container">
       <form className="row" onSubmit={handleNewTicketFormSubmission}>
         <input
           className="col-md-3"
           type='text'
           id='names'
-          placeholder='Pair Names'/>
+          placeholder='Pair Names'
           ref={(input) => {_names = input;}}/>
         <input
           className="col-md-3"
           type='text'
           id='location'
-          placeholder='Location'/>
+          placeholder='Location'
           ref={(input) => {_location = input;}}/>
         <textarea
           className="col-md-3"
           id='issue'
-          placeholder='Describe your issue.'/>
+          placeholder='Describe your issue.'
           ref={(textarea) => {_issue = textarea;}}/>
         <button className="col-md-3" type='submit' >Help!</button>
       </form>

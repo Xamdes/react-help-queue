@@ -1,15 +1,20 @@
+/*
+* Copy to other files
+* import Error404 from './Error404';
+* <Error404/>
+*/
 import styled from 'styled-components';
 // import { Link, Switch, Route } from 'react-router-dom';
 
-function NoRoute(){
+function Error404(){
   return (
     <Main>
-      <h1>NoRoute Component Created Successfully</h1>
+      <h1>Error404 Component Created Successfully</h1>
     </Main>
   );
 }
 
-export default NoRoute;
+export default Error404;
 
 const Main = styled.div`
 background-color: black;
@@ -18,9 +23,4 @@ padding-top: 50px;
 color: white;
 `;
 
-/*
-* Copy to other files
-* import NoRoute from './NoRoute';
-* <NoRoute/>
-*/
 
