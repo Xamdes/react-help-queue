@@ -4,6 +4,8 @@
 * <NewTicketControl/>
 */
 import styled from 'styled-components';
+import ConfirmationQuestions from './ConfirmationQuestions';
+import NewTicketForm from './NewTicketForm';
 // import { Link, Switch, Route } from 'react-router-dom';
 
 class NewTicketControl extends React.Component{
@@ -20,10 +22,22 @@ class NewTicketControl extends React.Component{
   }
 
   render(){
+    let currentVisibleContent = null;
+    if(this.state.formVisibleOnPage)
+    {
+      currentVisibleContent = <NewTicketForm/>;
+    }
+    else
+    {
+      currentVisibleContent =<ConfirmationQuestions/>
+    }
     return (
       <Main>
-        <h1>NewTicketControl Component Created Successfully</h1>
-        <button className="btn btn-dark" onClick={this.handleClick}>toggle Form!</button>
+        {/*
+          <h1>NewTicketControl Component Created Successfully</h1>
+          <button className="btn btn-dark" onClick={this.handleClick}>Toggle Form!</button>
+          */}
+        {currentVisibleContent}
       </Main>
     );
   }

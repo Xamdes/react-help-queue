@@ -5,10 +5,12 @@ import MyStyledComponent from './MyStyledComponent';
 import NoRoute from './NoRoute';
 import NewTicketControl from './NewTicketControl';
 import { Switch, Route } from 'react-router-dom';
+import styled from 'styled-components';
 
-function App(){
+function App()
+{
   return (
-    <div>
+    <Main className="container">
       <Header/>
       <Switch>
         <Route exact path='/' component={TicketList} />
@@ -16,8 +18,12 @@ function App(){
         <Route path='/styles' component={MyStyledComponent} />
         <Route component={NoRoute} />
       </Switch>
-    </div>
+    </Main>
   );
 }
 
 export default App;
+
+const Main = styled.div`
+
+`;

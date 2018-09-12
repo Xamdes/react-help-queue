@@ -1,4 +1,11 @@
+/*
+* Copy to other files
+* import NewTicketForm from './NewTicketForm';
+* <NewTicketForm/>
+*/
 import styled from 'styled-components';
+// import { Link, Switch, Route } from 'react-router-dom';
+
 function NewTicketForm(){
   return (
     <Main>
