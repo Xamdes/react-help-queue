@@ -16,14 +16,14 @@ class NewTicketControl extends React.Component{
   }
 
   handleClick() {
-    this.setState({formVisibleOnPage: true});
+    this.setState({formVisibleOnPage: !this.state.formVisibleOnPage});
   }
 
   render(){
     return (
       <Main>
         <h1>NewTicketControl Component Created Successfully</h1>
-        <button className="btn btn-dark" onClick={this.handleClick}>Show Form!</button>
+        <button className="btn btn-dark" onClick={this.handleClick}>toggle Form!</button>
       </Main>
     );
   }
