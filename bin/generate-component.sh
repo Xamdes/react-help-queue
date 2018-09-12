@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+PREPEND=${2:-false}
 
 cd ./src/components
 
@@ -8,6 +9,7 @@ echo "/*
 * <$1/>
 */
 import styled from 'styled-components';
+// import PropTypes from 'prop-types';
 // import { Link, Switch, Route } from 'react-router-dom';
 
 function $1(){
@@ -27,4 +29,14 @@ padding-top: 50px;
 color: white;
 \`;
 
+/*
+NewTicketForm.propTypes = {
+  [variable-name]: PropTypes.string,
+};
+*/
 " > "$1.jsx"
+
+if [ $PREPEND != false ];
+then
+  echo "import $1 from './$1'" | cat - ./$PREPEND.jsx > temp && mv temp ./$PREPEND.jsx
+fi

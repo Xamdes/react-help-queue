@@ -9,6 +9,12 @@ import styled from 'styled-components';
 
 class App extends React.Component
 {
+  constructor(props) {
+    super(props);
+    this.state = {
+      masterTicketList: []
+    };
+  }
   render(){
     return (
       <Main className="container">
@@ -21,7 +27,7 @@ class App extends React.Component
         </Switch>
       </Main>
     );
-  }  
+  }
 }
 
 export default App;
