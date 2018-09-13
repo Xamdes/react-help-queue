@@ -4,7 +4,6 @@
 * <NewTicketControl/>
 */
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import ConfirmationQuestions from './ConfirmationQuestions';
 import NewTicketForm from './NewTicketForm';
 // import { Link, Switch, Route } from 'react-router-dom';
@@ -15,10 +14,10 @@ class NewTicketControl extends React.Component{
     this.state = {
       formVisibleOnPage: false
     };
-    this.handleClickConfirmation = this.handleClickConfirmation.bind(this);
+    this.handleTroubleshootingConfirmation = this.handleTroubleshootingConfirmation.bind(this);
   }
 
-  handleClickConfirmation() {
+  handleTroubleshootingConfirmation() {
     this.setState({formVisibleOnPage: !this.state.formVisibleOnPage});
   }
 
@@ -26,11 +25,11 @@ class NewTicketControl extends React.Component{
     let currentVisibleContent = null;
     if(this.state.formVisibleOnPage)
     {
-      currentVisibleContent = <NewTicketForm onHandleClickConfirmation={this.handleClickConfirmation} onNewTicketCreation={this.props.onNewTicketCreation}/>;
+      currentVisibleContent = <NewTicketForm onHandleClickConfirmation={this.handleTroubleshootingConfirmation} onNewTicketCreation={this.props.onNewTicketCreation}/>;
     }
     else
     {
-      currentVisibleContent = <ConfirmationQuestions onHandleClickConfirmation={this.handleClickConfirmation}/>;
+      currentVisibleContent = <ConfirmationQuestions onHandleClickConfirmation={this.handleTroubleshootingConfirmation}/>;
     }
     return (
       <Main>
