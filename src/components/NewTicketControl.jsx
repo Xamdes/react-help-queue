@@ -4,6 +4,7 @@
 * <NewTicketControl/>
 */
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import ConfirmationQuestions from './ConfirmationQuestions';
 import NewTicketForm from './NewTicketForm';
 // import { Link, Switch, Route } from 'react-router-dom';
@@ -25,7 +26,7 @@ class NewTicketControl extends React.Component{
     let currentVisibleContent = null;
     if(this.state.formVisibleOnPage)
     {
-      currentVisibleContent = <NewTicketForm onHandleClickConfirmation={this.handleClickConfirmation}/>;
+      currentVisibleContent = <NewTicketForm onHandleClickConfirmation={this.handleClickConfirmation} onNewTicketCreation={this.props.onNewTicketCreation}/>;
     }
     else
     {
@@ -33,16 +34,16 @@ class NewTicketControl extends React.Component{
     }
     return (
       <Main>
-        {/*
-          <h1>NewTicketControl Component Created Successfully</h1>
-          <button className="btn btn-dark" onClick={this.handleClick}>Toggle Form!</button>
-          */}
         {currentVisibleContent}
       </Main>
     );
   }
 
 }
+
+NewTicketControl.propTypes = {
+  onNewTicketCreation: PropTypes.func
+};
 
 export default NewTicketControl;
 

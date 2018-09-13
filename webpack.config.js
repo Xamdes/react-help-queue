@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   //development, production or none
-  mode: 'production',
+  mode: 'development',
 
   entry: [
     'react-hot-loader/patch',

@@ -20,6 +20,12 @@ function $1(){
   );
 }
 
+/*
+NewTicketForm.propTypes = {
+  [variable-name]: PropTypes.string,
+};
+*/
+
 export default $1;
 
 const Main = styled.div\`
@@ -28,12 +34,6 @@ font-family: sans-serif;
 padding-top: 50px;
 color: white;
 \`;
-
-/*
-NewTicketForm.propTypes = {
-  [variable-name]: PropTypes.string,
-};
-*/
 " > "$1.jsx"
 
 if [ $PREPEND != false ];
