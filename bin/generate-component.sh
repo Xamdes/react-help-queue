@@ -21,7 +21,7 @@ function $1(){
 }
 
 /*
-NewTicketForm.propTypes = {
+$1.propTypes = {
   [variable-name]: PropTypes.string,
 };
 */

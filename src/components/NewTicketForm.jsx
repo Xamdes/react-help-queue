@@ -5,6 +5,7 @@
 */
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
 // import { Link, Switch, Route } from 'react-router-dom';
 
 function NewTicketForm(props)
@@ -14,7 +15,7 @@ function NewTicketForm(props)
   function handleNewTicketFormSubmission(event)
   {
     event.preventDefault();
-    props.onNewTicketCreation({names: _names.value, location: _location.value, issue: _issue.value});
+    props.onNewTicketCreation({names: _names.value, location: _location.value, issue: _issue.value, id: v4()});
     _names.value = '';
     _location.value = '';
     _issue.value = '';
@@ -47,6 +48,12 @@ function NewTicketForm(props)
   );
 }
 
+NewTicketForm.propTypes = {
+  // [variable-name]: PropTypes.string,
+  onHandleClickConfirmation: PropTypes.funct,
+  onNewTicketCreation: PropTypes.func
+};
+
 export default NewTicketForm;
 
 const Main = styled.div`
@@ -55,9 +62,3 @@ font-family: sans-serif;
 padding-top: 50px;
 color: white;
 `;
-
-NewTicketForm.propTypes = {
-  // [variable-name]: PropTypes.string,
-  onHandleClickConfirmation: PropTypes.funct,
-  onNewTicketCreation: PropTypes.func
-};

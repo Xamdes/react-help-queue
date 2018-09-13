@@ -8,10 +8,10 @@ import Ticket from './Ticket';
 import PropTypes from 'prop-types';
 // import { Link, Switch, Route } from 'react-router-dom';
 
-function TicketList(){
+function TicketList(props){
   return (
     <Main>
-      {masterTicketList.map((ticket, index) =>
+      {props.ticketList.map((ticket, index) =>
         <Ticket names={ticket.names}
           location={ticket.location}
           issue={ticket.issue}
@@ -21,11 +21,11 @@ function TicketList(){
   );
 }
 
-/*
-NewTicketForm.propTypes = {
-  [variable-name]: PropTypes.string,
+
+TicketList.propTypes = {
+  ticketList: PropTypes.array,
 };
-*/
+
 
 export default TicketList;
 
