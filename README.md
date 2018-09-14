@@ -2,7 +2,7 @@
 
 ## Author(s)
 
-  * Jane Doe
+  * Steven Colburn
 
 ## Install
 
