@@ -6,16 +6,28 @@
 import styled from 'styled-components';
 import { v4 } from 'uuid';
 import Moment from 'moment';
+import { connect } from 'react-redux';
 // import { Link, Switch, Route } from 'react-router-dom';
 
 function NewTicketForm(props)
 {
+  console.log(props);
   let _names, _location, _issue;
   _names = _location = _issue = null;
   function handleNewTicketFormSubmission(event)
   {
+    const { dispatch } = props;
     event.preventDefault();
-    props.onNewTicketCreation({names: _names.value, location: _location.value, issue: _issue.value, id: v4(), timeOpen: new Moment()});
+    const action = {
+      type: 'ADD_TICKET',
+      id: null,
+      names: _names.value,
+      location: _location.value,
+      issue: _issue.value,
+      timeOpen: new Moment()
+    };
+    dispatch(action);
+    // props.onNewTicketCreation({names: _names.value, location: _location.value, issue: _issue.value, id: v4(), timeOpen: new Moment()});
     _names.value = '';
     _location.value = '';
     _issue.value = '';
@@ -42,7 +54,7 @@ function NewTicketForm(props)
           id='issue'
           placeholder='Describe your issue.'
           ref={(textarea) => {_issue = textarea;}}/>
-        <button className="col-md-3" type='submit' >Help!</button>
+        <button className="btn btn-light col-md-3" type='submit' >Help!</button>
       </form>
     </Main>
   );
@@ -51,10 +63,10 @@ function NewTicketForm(props)
 NewTicketForm.propTypes = {
   // [variable-name]: PropTypes.string,
   onHandleClickConfirmation: PropTypes.funct,
-  onNewTicketCreation: PropTypes.func
+  // onNewTicketCreation: PropTypes.func
 };
 
-export default NewTicketForm;
+export default connect()(NewTicketForm);
 
 const Main = styled.div`
 background-color: black;
