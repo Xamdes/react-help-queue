@@ -27,7 +27,7 @@ function NewTicketForm(props)
       timeOpen: new Moment()
     };
     dispatch(action);
-    // props.onNewTicketCreation({names: _names.value, location: _location.value, issue: _issue.value, id: v4(), timeOpen: new Moment()});
+    // props.onNewTicketCreation({names: _names.value, location: _location.value, issue: _issue.value, timeOpen: new Moment()});
     _names.value = '';
     _location.value = '';
     _issue.value = '';
