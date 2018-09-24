@@ -10,7 +10,7 @@ function ConfirmationQuestions(props){
   return (
     <Main>
       <p>Have you gone through all the steps on the Learn How to Program debugging lesson?</p>
-      <button className="btn btn-dark" onClick={props.onHandleClickConfirmation}>Yes</button>
+      <button className="btn btn-dark" onClick={props.onTroubleshootingConfirmation}>Yes</button>
     </Main>
   );
 }
@@ -26,5 +26,5 @@ color: white;
 
 ConfirmationQuestions.propTypes = {
   // [variable-name]: PropTypes.string,
-  onHandleClickConfirmation: PropTypes.funct
+  onTroubleshootingConfirmation: PropTypes.funct
 };

@@ -7,7 +7,6 @@ import NewTicketControl from './NewTicketControl';
 import { Switch, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import Moment from 'moment';
-import { v4 } from 'uuid';
 
 class App extends React.Component
 {
@@ -18,7 +17,7 @@ class App extends React.Component
       masterTicketList: [],
       selectedTicket: null
     };
-    this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this);
+    // this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this);
     this.handleChangingSelectedTicket = this.handleChangingSelectedTicket.bind(this);
   }
 
@@ -57,7 +56,6 @@ class App extends React.Component
   handleChangingSelectedTicket(ticketId)
   {
     this.setState({selectedTicket: ticketId});
-    // alert('The selected ticket is now: ' + this.state.selectedTicket.names);
   }
 
   render()
@@ -68,7 +66,7 @@ class App extends React.Component
           <Header/>
           <Switch>
             <Route exact path='/' render={()=><TicketList ticketList={this.state.masterTicketList} />} />
-            <Route path='/newticket' render={()=><NewTicketControl onNewTicketCreation={this.handleAddingNewTicketToList} />} />
+            <Route path='/newticket' render={()=><NewTicketControl />} />
             <Route path='/styles' component={MyStyledComponent} />
             <Route path='/admin' render={(props)=><Admin ticketList={this.state.masterTicketList}
               currentRouterPath={props.location.pathname}

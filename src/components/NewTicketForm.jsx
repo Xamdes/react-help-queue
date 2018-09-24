@@ -7,6 +7,8 @@ import styled from 'styled-components';
 // import { v4 } from 'uuid';
 import Moment from 'moment';
 import { connect } from 'react-redux';
+import { v4 } from 'uuid';
+
 // import { Link, Switch, Route } from 'react-router-dom';
 
 function NewTicketForm(props)
@@ -20,18 +22,17 @@ function NewTicketForm(props)
     event.preventDefault();
     const action = {
       type: 'ADD_TICKET',
-      id: null,
+      id: v4(),
       names: _names.value,
       location: _location.value,
       issue: _issue.value,
       timeOpen: new Moment()
     };
     dispatch(action);
-    // props.onNewTicketCreation({names: _names.value, location: _location.value, issue: _issue.value, timeOpen: new Moment()});
     _names.value = '';
     _location.value = '';
     _issue.value = '';
-    props.onHandleClickConfirmation();
+    props.onTroubleshootingConfirmation();
   }
 
   return (
@@ -61,9 +62,7 @@ function NewTicketForm(props)
 }
 
 NewTicketForm.propTypes = {
-  // [variable-name]: PropTypes.string,
-  onHandleClickConfirmation: PropTypes.funct,
-  // onNewTicketCreation: PropTypes.func
+  onTroubleshootingConfirmation: PropTypes.funct,
 };
 
 export default connect()(NewTicketForm);
