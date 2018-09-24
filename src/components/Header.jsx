@@ -12,6 +12,8 @@ function Header(){
       <Link to="/styles">Style Tests</Link>
       <Blank> | </Blank>
       <Link to="/not-working">Bad Route</Link>
+      <Blank> | </Blank>
+      <Link to="/admin">Admin</Link>
     </Main>
   );
 }

@@ -6,10 +6,10 @@
 import styled from 'styled-components';
 // import { Link, Switch, Route } from 'react-router-dom';
 
-function Error404(){
+function Error404(props){
   return (
     <Main>
-      <h1>Error404 Component Created Successfully</h1>
+      <h1>The page {props.location.pathname} does not exist!</h1>
     </Main>
   );
 }
@@ -22,5 +22,3 @@ font-family: sans-serif;
 padding-top: 50px;
 color: white;
 `;
-
-

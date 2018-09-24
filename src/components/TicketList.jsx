@@ -14,7 +14,8 @@ function TicketList(props){
         <Ticket names={ticket.names}
           location={ticket.location}
           issue={ticket.issue}
-          timeOpen={ticket.timeOpen}
+          formattedWaitTime={ticket.formattedWaitTime}
+          currentRouterPath={props.currentRouterPath}
           key={ticket.id}/>
       )}
     </Main>
@@ -24,6 +25,7 @@ function TicketList(props){
 
 TicketList.propTypes = {
   ticketList: PropTypes.array,
+  currentRouterPath: PropTypes.string
 };
 
 
