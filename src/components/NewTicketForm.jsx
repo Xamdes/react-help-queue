@@ -4,7 +4,6 @@
 * <NewTicketForm/>
 */
 import styled from 'styled-components';
-// import { v4 } from 'uuid';
 import Moment from 'moment';
 import { connect } from 'react-redux';
 import { v4 } from 'uuid';

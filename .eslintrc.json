@@ -64,6 +64,7 @@
       "error",
       "always"
     ],
-    "no-unused-vars": 1
+    "no-unused-vars": 1,
+    "no-console": 1
   }
 }

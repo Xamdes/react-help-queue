@@ -4,15 +4,17 @@ import TicketList from './TicketList';
 import MyStyledComponent from './MyStyledComponent';
 import Error404 from './Error404';
 import NewTicketControl from './NewTicketControl';
-import { Switch, Route } from 'react-router-dom';
+import { withRouter, Switch, Route } from 'react-router-dom';
 import styled from 'styled-components';
-import Moment from 'moment';
+// import Moment from 'moment';
+import { connect } from 'react-redux';
 
 class App extends React.Component
 {
   constructor(props)
   {
     super(props);
+    console.log(props);
     this.state = {
       masterTicketList: [],
       selectedTicket: null
@@ -43,16 +45,6 @@ class App extends React.Component
     this.setState({masterTicketList: newMasterTicketList});
   }
 
-  handleAddingNewTicketToList(newTicket)
-  {
-    let newTicketId = v4();
-    let newMasterTicketList = Object.assign({}, this.state.masterTicketList, {
-      [newTicketId]: newTicket
-    });
-    newMasterTicketList[newTicketId].formattedWaitTime = newMasterTicketList[newTicketId].timeOpen.fromNow(true);
-    this.setState({masterTicketList: newMasterTicketList});
-  }
-
   handleChangingSelectedTicket(ticketId)
   {
     this.setState({selectedTicket: ticketId});
@@ -65,10 +57,10 @@ class App extends React.Component
         <div className="container">
           <Header/>
           <Switch>
-            <Route exact path='/' render={()=><TicketList ticketList={this.state.masterTicketList} />} />
-            <Route path='/newticket' render={()=><NewTicketControl />} />
+            <Route exact path='/' render={()=><TicketList ticketList={this.props.masterTicketList} />} />
+            <Route path='/newticket' component={NewTicketControl}/>
             <Route path='/styles' component={MyStyledComponent} />
-            <Route path='/admin' render={(props)=><Admin ticketList={this.state.masterTicketList}
+            <Route path='/admin' render={(props)=><Admin ticketList={this.props.masterTicketList}
               currentRouterPath={props.location.pathname}
               onTicketSelection={this.handleChangingSelectedTicket}
               selectedTicket={this.state.selectedTicket} />} />
@@ -80,7 +72,21 @@ class App extends React.Component
   }
 }
 
-export default App;
+App.propTypes = {
+  masterTicketList: PropTypes.object
+};
+
+const mapStateToProps = state => {
+  return {
+    masterTicketList: state
+  };
+};
+
+console.log(mapStateToProps);
+
+const MyConnectedComponent = withRouter(connect(mapStateToProps)(App));
+
+export default MyConnectedComponent;
 
 const Main = styled.div`
 background-color: darkgrey;
