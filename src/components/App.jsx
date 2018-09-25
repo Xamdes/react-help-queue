@@ -16,7 +16,6 @@ class App extends React.Component
     super(props);
     console.log(props);
     this.state = {
-      masterTicketList: [],
       selectedTicket: null
     };
     // this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this);
@@ -38,11 +37,11 @@ class App extends React.Component
 
   updateTicketElapsedWaitTime()
   {
-    let newMasterTicketList = Object.assign({}, this.state.masterTicketList);
-    Object.keys(newMasterTicketList).forEach(ticketId => {
-      newMasterTicketList[ticketId].formattedWaitTime = (newMasterTicketList[ticketId].timeOpen).fromNow(true);
-    });
-    this.setState({masterTicketList: newMasterTicketList});
+    // let newMasterTicketList = Object.assign({}, this.state.masterTicketList);
+    // Object.keys(newMasterTicketList).forEach(ticketId => {
+    //   newMasterTicketList[ticketId].formattedWaitTime = (newMasterTicketList[ticketId].timeOpen).fromNow(true);
+    // });
+    // this.setState({masterTicketList: newMasterTicketList});
   }
 
   handleChangingSelectedTicket(ticketId)
@@ -81,8 +80,6 @@ const mapStateToProps = state => {
     masterTicketList: state
   };
 };
-
-console.log(mapStateToProps);
 
 const MyConnectedComponent = withRouter(connect(mapStateToProps)(App));
 
