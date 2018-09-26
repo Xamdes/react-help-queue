@@ -11,7 +11,7 @@
     "git-config": "bash ./bin/git-config.sh",
     "start": "webpack-dev-server",
     "start-web": "webpack-dev-server --open",
-    "test": "jest || true",
+    "test": "jest --watchAll || true",
     "web": "open http://localhost:8080",
     "lint": "eslint \"src/**\" \"src/**/**\" || true",
     "lint-fix": "eslint \"src/**\" \"src/**/**\" --fix || true",
