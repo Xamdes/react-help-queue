@@ -6,7 +6,7 @@
   "scripts": {
     "npm": "npm",
     "fresh": "npm install && webpack",
-    "gen": "./bin/generate-component.sh",
+    "gen": "bash ./bin/generate-component.sh",
     "commit": "bash ./bin/commit.sh",
     "git-config": "bash ./bin/git-config.sh",
     "start": "webpack-dev-server",
