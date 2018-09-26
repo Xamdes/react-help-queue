@@ -1,7 +1,16 @@
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 
 function Ticket(props)
 {
+  function handleSavingSelectedTicket(ticketId){
+    const { dispatch } = props;
+    const action = {
+      type: 'SELECT_TICKET',
+      ticketId: ticketId
+    };
+    dispatch(action);
+  }
   const ticketInformation =
     <div>
       <HeaderThree>{props.location} - {props.names}</HeaderThree>
@@ -11,7 +20,7 @@ function Ticket(props)
   if (props.currentRouterPath === '/admin')
   {
     return (
-      <div onClick={() => {props.onTicketSelection(props.ticketId);}}>
+      <div onClick={() => {handleSavingSelectedTicket(props.ticketId);}}>
         {ticketInformation}
       </div>
     );
@@ -35,7 +44,7 @@ Ticket.propTypes = {
   ticketId: PropTypes.string.isRequired,
 };
 
-export default Ticket;
+export default connect()(Ticket);
 
 const HeaderThree = styled.h3`
 background-color: green;

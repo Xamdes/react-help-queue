@@ -11,16 +11,16 @@ import { connect } from 'react-redux';
 
 class App extends React.Component
 {
-  constructor(props)
-  {
-    super(props);
-    console.log(props);
-    this.state = {
-      selectedTicket: null
-    };
-    // this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this);
-    this.handleChangingSelectedTicket = this.handleChangingSelectedTicket.bind(this);
-  }
+  // constructor(props)
+  // {
+  //   super(props);
+  //   console.log(props);
+  //   this.state = {
+  //     selectedTicket: null
+  //   };
+  //   // this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this);
+  //   this.handleChangingSelectedTicket = this.handleChangingSelectedTicket.bind(this);
+  // }
 
   componentDidMount()
   {
@@ -44,10 +44,10 @@ class App extends React.Component
     // this.setState({masterTicketList: newMasterTicketList});
   }
 
-  handleChangingSelectedTicket(ticketId)
-  {
-    this.setState({selectedTicket: ticketId});
-  }
+  // handleChangingSelectedTicket(ticketId)
+  // {
+  //   this.setState({selectedTicket: ticketId});
+  // }
 
   render()
   {
@@ -59,10 +59,7 @@ class App extends React.Component
             <Route exact path='/' render={()=><TicketList ticketList={this.props.masterTicketList} />} />
             <Route path='/newticket' component={NewTicketControl}/>
             <Route path='/styles' component={MyStyledComponent} />
-            <Route path='/admin' render={(props)=><Admin ticketList={this.props.masterTicketList}
-              currentRouterPath={props.location.pathname}
-              onTicketSelection={this.handleChangingSelectedTicket}
-              selectedTicket={this.state.selectedTicket} />} />
+            <Route path='/admin' render={(props)=><Admin currentRouterPath={props.location.pathname}/>} />
             <Route component={Error404} />
           </Switch>
         </div>
@@ -77,7 +74,7 @@ App.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    masterTicketList: state
+    masterTicketList: state.masterTicketList
   };
 };
 
