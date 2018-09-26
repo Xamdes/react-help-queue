@@ -11,17 +11,6 @@ import { connect } from 'react-redux';
 
 class App extends React.Component
 {
-  // constructor(props)
-  // {
-  //   super(props);
-  //   console.log(props);
-  //   this.state = {
-  //     selectedTicket: null
-  //   };
-  //   // this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this);
-  //   this.handleChangingSelectedTicket = this.handleChangingSelectedTicket.bind(this);
-  // }
-
   componentDidMount()
   {
     this.waitTimeUpdateTimer = setInterval(() =>
@@ -37,17 +26,18 @@ class App extends React.Component
 
   updateTicketElapsedWaitTime()
   {
-    // let newMasterTicketList = Object.assign({}, this.state.masterTicketList);
-    // Object.keys(newMasterTicketList).forEach(ticketId => {
-    //   newMasterTicketList[ticketId].formattedWaitTime = (newMasterTicketList[ticketId].timeOpen).fromNow(true);
-    // });
-    // this.setState({masterTicketList: newMasterTicketList});
+    const { dispatch } = this.props;
+    Object.keys(this.props.masterTicketList).map(ticketId => {
+      const ticket = this.props.masterTicketList[ticketId];
+      const newFormattedWaitTime = ticket.timeOpen.fromNow(true);
+      const action = {
+        type: 'UPDATE_TIME',
+        id: ticketId,
+        formattedWaitTime: newFormattedWaitTime
+      };
+      dispatch(action);
+    });
   }
-
-  // handleChangingSelectedTicket(ticketId)
-  // {
-  //   this.setState({selectedTicket: ticketId});
-  // }
 
   render()
   {
@@ -69,7 +59,8 @@ class App extends React.Component
 }
 
 App.propTypes = {
-  masterTicketList: PropTypes.object
+  masterTicketList: PropTypes.object,
+  dispatch: PropTypes.func
 };
 
 const mapStateToProps = state => {
